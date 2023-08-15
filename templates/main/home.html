@@ -1,0 +1,212 @@
+{% extends 'main/baselayout.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<div id="preloader">
+    <div class="logo">
+      <img src="{% static 'images/logo_c-t.png' %}" alt="Your Logo"> 
+    </div>
+</div>
+
+<div class="introduction">
+    <div class="intro-left">
+        <p>Welcome to the</p>
+        <h1 >FAYASITE KOLEKTIF</h1>
+    </div>
+    <div class="intro-right">
+        <p> 'Nurture the flame of conversation, regardless of differing views' </p>
+    </div>
+</div>
+<section class="about" style="background: url('{% static 'images/maskpattern.jpg' %}')">
+    <div>
+        <p class="tagline">a mixed-use space for pan-african culture and thought from the left</p>
+    </div>
+</section>
+
+
+    <div class="columns">
+        <div class="column">
+            <div class="mouse_alerts" data-message="LEARN MORE">
+                <h5>Gallery</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perferendis, cum harum nostrum maiores atque amet quisquam ipsa adipisci nemo? Excepturi perspiciatis nulla obcaecati non quae, quibusdam architecto corrupti laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?</p>
+            </div>
+
+            <div class='column-image' style="background-image: url('https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            </div>
+            <div class="mouse_alerts" data-message="LEARN MORE">
+                <h5>Study Space</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda rerum recusandae inventore voluptatem natus quaerat, suscipit aut explicabo nulla ex.
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?</p>
+            </div>
+            <div class='column-image' style="background:url('https://images.pexels.com/photos/1384614/pexels-photo-1384614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
+
+        </div>
+        <div class="column column-reverse">
+            <div >
+            </div>
+            <div class="mouse_alerts" data-message="LEARN MORE">
+                <h5>Event Halls</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, rerum.</p>
+            </div>
+            <div class='column-image' style="background:url('https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quisquam.</p>
+            </div>
+        </div>
+    </div>
+<hr>
+<section class="articles ">
+<h3>Articles</h3>
+<div class="articles-container mouse_alerts"> 
+    {% for article in articles %}
+        <article>
+            {% if paginated_article %}
+                <span class="recentPost">{{ article.date|date:"d" }}<br>{{ article.date|date:"F" }}
+                </span>
+            {% endif %} 
+            <div class="article_image"  style=" background: url('{{article.image.url}}');background-position:center;
+            background-size:cover; background-repeat: no-repeat;">
+            </div>
+            <div class="article_element" >
+                <p style="margin-bottom: 10px;color: grey;"> {{article.category|title}}</p>
+                <h2><a href="{% url 'details' courseid=article.slug %}" style="font-weight: 200;font-size: 1.3rem;"> {{article.title|title}}</a></h2>  
+                <a href="{% url 'details' courseid=article.slug %}"> <button id="readmore">Read More</button> </a>
+            </div>      
+        </article>
+    {% endfor %}
+</div>
+    <a href="{% url 'blog' %}?category=article" style="width: 100%;"> <button id="readmore" style="border-color: silver;padding: 1em 2em;">All Articles</button> </a> <br>
+</section>
+
+{%if events%}
+<section class="events">
+    <h3 style="letter-spacing: 12px;font-size: 2.5rem;">Events</h3>
+    <div class="events_container">
+        {% for event in events%}
+        <a href="{% url 'events' %}">
+            <div class="event">
+                <div class="date"> {{ event.date|date:"d" }} {{ event.date|date:"M" }}
+                    <br> {{event.date|date:"Y"}}</div>
+                <div class="event_info">
+                    <p class="event_title"> {{event.title}}</p>
+                    <p class="event_description">{{event.description}}</p>
+                </div>
+            </div>
+        </a>
+
+        {% endfor %}
+    </div>
+    <a href="{% url 'events' %}" style="width: 100%;"> <button id="readmore" style="border-color: silver;padding: 1em 2em;">All Events</button> </a> <br>
+</section>
+
+
+
+</section>
+{%endif%}
+<section class="podcast">
+    <div class="podcast-container">
+        <div  class="podcast-info">
+            <h3 style="letter-spacing: 12px;font-size: 2.5rem;">The Podcast</h3>
+            <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda rerum recusandae inventore voluptatem natus quaerat, suscipit aut explicabo nulla ex.
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?
+                </p>
+                <br>
+                <a href="{% url 'podcast' %}"> <button id="readmore" class="readmore-podcast">Visit Podcast → </button> </a> <br>
+                <br>
+            <ul class="podcasthost">
+                    <li><span> <img src="{% static 'icons/spotify.png' %}" alt="spotify-logo"></span></li>
+                    <li><span><img src="{% static 'icons/applepodcast.png' %}" alt="applepodcast-logo"></span></li>
+                    <li><span><img src="{% static 'icons/youtube.png' %}" alt="youtube-logo"></span></li>
+            </ul>  
+        </div>
+         <div class="podcast-image" >
+            <img src="{% static 'images/podcast.png' %}" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    let preloader = document.getElementById("preloader");
+    setTimeout(function () {
+  preloader.style.transition = "1s ease-in-out";
+      preloader.style.display = "none";
+}, 2500);
+</script>
+
+<script>
+
+const timeline = new ScrollTimeline({
+	source: document.documentElement,
+});
+// Loop all eligible columns
+document.querySelectorAll(".column-reverse").forEach(($column) => {
+	// Flip item order in reverse columns
+	$column.style.flexDirection = "column-reverse";
+
+	// Hook Animation
+	$column.animate(
+		{
+			transform: [
+				"translateY(calc(-100% + 100vh))",
+				"translateY(calc(100% - 100vh))"
+			]
+		},
+		{
+			fill: "both",
+			timeline
+		}
+	);
+});
+</script>
+
+
+
+<script>
+        let serviceItem = document.querySelectorAll('.tagline');
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.style.animation = 'pop 1.2s ease-in-out';
+        } else {
+          entry.target.style.animation = 'none';
+        }
+      })
+    })
+    serviceItem.forEach(block => {
+      observer.observe(block);
+    });
+</script>
+<script>
+
+const mouseAlerts = document.querySelectorAll('.mouse_alerts');
+    mouseAlerts.forEach(mouseAlert => {
+      mouseAlert.addEventListener('mouseover', () => {
+        const message = mouseAlert.getAttribute('data-message');
+        circle.style.height = "100px";
+        circle.style.width = "100px";
+        circle.style.backgroundColor = "black"
+        if (message){
+        circle.innerText='LEARN MORE'
+        }
+        else{
+            circle.innerText='SCROLL →'
+        }
+      });
+  
+      mouseAlert.addEventListener('mouseout', () => {
+   
+        circle.style.height = "15px";
+        circle.style.width = "15px";
+        circle.style.borderRadius = "50%";
+        circle.innerText='';
+        circle.style.backgroundColor = "#f82c14"
+ 
+      });
+    });
+</script>
+{%endblock%}

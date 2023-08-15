@@ -1,0 +1,38 @@
+{% extends 'main/baselayout.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+  <select name="filter" id="filter" onchange="location = this.value;" >
+    <option value="">Filter Events</option>
+    <option value="{% url 'events' %}?filter=upcoming">Upcoming Events</option>
+    <option value="{% url 'events' %}?filter=past">Past Events</option>
+  </select>
+</div>
+
+<section class="events">
+  <h3 style="letter-spacing: 12px;font-size: 2.8rem; font-family: 'Times New Roman', Times, serif;">Events</h3>
+  <div class="events_container">
+      {% for event in events%}
+      <a href="{% url 'events' %}">
+          <div class="event">
+              <div class="date"> {{ event.date|date:"d" }} {{ event.date|date:"M" }}
+                  <br> {{event.date|date:"Y"}}</div>
+              <div class="event_info">
+                  <p class="event_title"> {{event.title}}</p>
+                  <p style="font-family: 'Times New Roman', Times, serif; font-size: larger;margin-bottom: .5rem; display: flex; gap:10px;color: grey;"> 
+                    <span style="display: flex;align-items: center;gap: 10px; font-family: inherit;"><img src="{% static 'icons/clock.png' %}" alt="" style="width: 20px;"> {{event.time}} </span>  |
+                    <span style="display: flex;align-items: center;gap: 10px; font-family: inherit;"><img src="{% static 'icons/location.png' %}" alt="" style="width: 25px;"> {{event.venue}} </span> 
+                  </p>
+                  <p class="event_description">{{event.description}}</p>
+                  <p style="margin-top: 20px;"> - {{event.organizer}}</p>
+              </div>
+          </div>
+      </a>
+
+      {% endfor %}
+  </div>
+</section>
+{%endblock%}

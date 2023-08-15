@@ -1,0 +1,333 @@
+{% extends 'main/baselayout.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <ul>
+        <li><a href="#"> About Us</a></li>
+        <li><a href="#"> Projects</a></li>
+        <li><a href="#"> Team</a></li>
+        <li><a href="#"> Contact</a></li>
+    </ul>
+
+</header>
+<div class="hero-image">
+    <img src="https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+</div>
+
+<div style="background-color: white;margin-block: 2rem;">
+        <div class="mission_vision">
+            <h3>Mission→ </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. A iusto magni impedit nesciunt, eligendi rerum! Suscipit, mollitia aut? Neque ipsam accusantium repudiandae corporis sequi blanditiis laborum, nisi velit officiis. Laboriosam pariatur a nostrum adipisci. Tenetur, vel. Nisi magni quaerat dolores, temporibus magnam excepturi quas, earum placeat similique ratione veniam error!
+            </p>
+        </div>
+        <hr>
+        <div class="mission_vision">
+            <h3>Vision &#8599;</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. A iusto magni impedit nesciunt, eligendi rerum! Suscipit, mollitia aut? Neque ipsam accusantium repudiandae corporis sequi blanditiis laborum, nisi velit officiis. Laboriosam pariatur a nostrum adipisci. Tenetur, vel. Nisi magni quaerat dolores, temporibus magnam excepturi quas, earum placeat similique ratione veniam error!
+            </p>
+        </div>
+        <hr>
+</div>
+<div>
+    <h3>Projects &#8600; </h3>
+    <p style="margin-block: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet perferendis incidunt error voluptates consequuntur velit, architecto laboriosam aspernatur maiores in cum omnis aliquam, quae aperiam possimus et, beatae doloremque soluta eos odit sed! Ullam harum debitis modi tempora, consectetur placeat.</p>
+    <div class="flex">
+        <div>
+            <div class="img-description">
+                <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg" alt="project image">
+                <div class="description" id="element1">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam maxime quas sapiente quae sit, enim nobis perferendis! Sequi vel eum velit architecto maxime asperiores laudantium beatae mollitia? Similique ullam fugit aperiam! Ratione veniam nisi tempora, quos error illum, eligendi necessitatibus quia voluptate rerum iste architecto in sunt unde assumenda commodi.</p>
+                </div>
+            </div>
+            <figcaption>Fig 1: Construction of Library</figcaption>
+            <button id="readmore" class="toggle-button" data-target="element1"> Read About Project </button>
+        </div>
+        <div>
+            <div class="img-description">
+                <img src="https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=" project image">
+                <div class="description" id="element2">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor consectetur voluptate, eligendi molestiae modi non numquam sit maxime quo minima consequatur ea aliquid accusamus tempora quam rerum? Aliquid voluptatum in sunt accusamus dicta esse sequi adipisci hic facilis laborum error tenetur blanditiis libero assumenda atque rerum, id fuga quaerat? Fugiat non ratione magnam explicabo delectus quas? Tempore excepturi fugit ab nulla adipisci totam quia iste, dolore distinctio tenetur eligendi quisquam voluptas, sed nesciunt ex officia repellat ipsum facilis. Sed aspernatur accusantium deserunt, possimus labore porro libero, veritatis veniam, animi corrupti dolorum odio enim distinctio aliquam dolore cumque facere quae consectetur.</p>
+                </div>
+            </div>
+            <figcaption>Fig 1: Art Gallery Installation</figcaption>
+            <button id="readmore" class="toggle-button" data-target="element2"> Read About Project </button>
+        </div>
+    </div>
+</div>
+
+<section id="ourteam" class="mouse_alerts" data-message="HOVER">
+ <h3>Our Team</h3>
+<div class="circle">
+        <div class="circle-items">
+            <div class="team_image">
+                <img src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+            </div>
+            <div class="team_info">
+                <p>Organizer</p>
+                <p>Martin Fo.</p>
+                <div class="team_contacts"> 
+                    <a href="#"><img src="{%static 'icons/linkedin.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/instagram.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/mail.png'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="circle-items" data-user="Editor - Marius Tena">
+            <div class="team_image">
+                <img src="https://images.pexels.com/photos/3394347/pexels-photo-3394347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+            </div>
+            <div class="team_info">
+                <p>C00</p>
+                <p>Maningo Emelda </p>
+                <div class="team_contacts"> 
+                    <a href="#"><img src="{%static 'icons/linkedin.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/instagram.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/mail.png'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="circle-items" data-user="CTO - Niklas Torr">
+            <div class="team_image">
+                <img src="https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+            </div>
+            <div class="team_info">
+                <p>IT</p>
+                <p>Maningo Emelda </p>
+                <div class="team_contacts"> 
+                    <a href="#"><img src="{%static 'icons/linkedin.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/instagram.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/mail.png'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="circle-items" data-user="CEO / Founder - Maningo Emelda">
+            <div class="team_image">
+                <img src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+            </div>
+            <div class="team_info">
+                <p>Secretary</p>
+                <p>Maningo Emelda </p>
+                <div class="team_contacts"> 
+                    <a href="#"><img src="{%static 'icons/linkedin.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/instagram.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/mail.png'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="circle-items" data-user="Editor - Marius Tena">
+            <div class="team_image">
+                <img src="https://images.pexels.com/photos/3394347/pexels-photo-3394347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+            </div>
+            <div class="team_info">
+                <p>Treasurer</p>
+                <p>Maningo Emelda </p>
+                <div class="team_contacts"> 
+                    <a href="#"><img src="{%static 'icons/linkedin.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/instagram.png'%}" alt=""></a>
+                    <a href="#"><img src="{%static 'icons/mail.png'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+</section>
+
+<div>
+    <button id="readmore" style="padding: 2rem; border-color: grey;font-size:1.5rem;">
+        Contact Us →
+    </button>
+</div>
+
+
+<style>
+
+main{
+    margin: auto;
+    max-width: 1400px;
+    font-size: large;
+  
+}
+header {
+  color: #f1f1f1;
+  position: sticky;
+  background-color: white;
+  height: 70px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: none;
+}
+header ul{
+    display: flex;
+    overflow-x: scroll;
+}
+header li {
+    min-width: 100px;
+    font-size: 1.7rem;
+    padding: 1rem;
+    letter-spacing: 3px;
+}
+header li:hover{
+    border-bottom: 2px solid black;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-block:2rem ;
+}
+.img-description{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.img-description img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+h3{
+    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+}
+.mission_vision{
+    margin-block: 1rem;
+}
+.mission_vision p{
+    padding-block:1rem 2rem;
+}
+.hero-image{
+    height: 500px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.hero-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    border: 1px solid grey;
+    display: none;
+    z-index: 1;
+}
+figcaption{
+font-size: small;
+padding-block: 30px;
+}
+section#ourteam{
+    min-height: 80vh;
+    margin-block: 3rem;
+    padding:4rem 2rem;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+section#ourteam h3{
+    margin-bottom: 3rem;
+    text-align: center;
+}
+</style>
+
+<style>
+.circle{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: auto;
+    justify-content: center;
+}
+.circle-items{
+        width: 275px;
+        text-align: center;
+        font-size: medium;
+        background-color: white;
+        color: black;
+    }
+    .team_image img{
+    object-fit: cover;
+    width: 275px;
+    height: 200px;
+    }
+.circle-items:hover{
+    opacity: 0.8;
+    }
+#circle-items{
+        border-radius: 0;
+        width: 200px;
+        text-align: center;
+        font-weight: 400;
+    }
+    .team_contacts{
+        padding-block: 20px;
+    }
+    .team_contacts a img{
+        width: 20px;
+    }
+    .team_contacts a{
+        padding: 10px;
+    
+    }
+</style>
+
+<style>
+    @media screen and (max-width:768px) {
+        main{
+            padding: 1rem;
+        }
+        .flex{
+            display: block;
+        }
+        .flex > div {
+            margin-bottom: 1rem;
+        }
+        h3{
+            font-size: 3rem;
+        }        
+    }
+</style>
+
+<script>
+    let toggleButtons = document.querySelectorAll(".toggle-button");
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const targetId = button.getAttribute("data-target");
+            const toggleElement = document.getElementById(targetId);
+            console.log(targetId)
+    
+            if (toggleElement.style.opacity === "1") {
+                console.log(toggleElement.style.opacity)
+    
+                toggleElement.style.opacity = "0";
+                toggleElement.style.display ='none'
+            } else {
+                toggleElement.style.opacity = "1";
+                toggleElement.style.display ='flex'
+                console.log('toggle 1')
+            }
+        });
+    });
+    </script>
+
+
+{%endblock%}

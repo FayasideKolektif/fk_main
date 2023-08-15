@@ -1,0 +1,152 @@
+{% extends 'main/baselayout.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+<section class="storytelling-container mouse_alerts" data-message="Click Image">
+    <div class="container">
+        <div class="scope">
+            <div class="scope_center">
+                <img src="{% static 'images/logo_t.png' %}" alt="" width="100%">
+            </div>
+            {% for exhibition in exhibitions|slice:":8" %}
+            <div class="scope_item" style="--i:{{ forloop.counter }};">
+                <a href="#" class="popup-link" data-image="{{ exhibition.image.url }}" data-title="{{exhibition.title|safe}}" data-content="{{exhibition.description|safe}}">
+                    <img src="{{ exhibition.image.url }}" alt="not found">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <div style="display: flex;justify-content: right;padding:1rem 2rem;">
+            <button class="close-btn" id="close-btn"><img src="{%static 'icons/x.png'%}" alt="" width="40px"></button>
+        </div>
+        <div class="popup-flex">
+            <div class="popup-image">
+                <img src="" alt="Popup Image" id="popup-image" width="100%">
+            </div>
+            <div class="popup-description" id="popup-description"></div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    const mouseAlerts = document.querySelectorAll('.mouse_alerts');
+        mouseAlerts.forEach(mouseAlert => {
+          mouseAlert.addEventListener('mouseover', () => {
+            const message = mouseAlert.getAttribute('data-message');
+            circle.style.height = "100px";
+            circle.style.width = "100px";
+            circle.style.backgroundColor = "black"
+            if (message){
+            circle.innerText=message
+            }
+            else{
+                circle.innerText='SCROLL →'
+            }
+          });
+      
+          mouseAlert.addEventListener('mouseout', () => {
+       
+            circle.style.height = "15px";
+            circle.style.width = "15px";
+            circle.style.borderRadius = "50%";
+            circle.innerText='';
+            circle.style.backgroundColor = "#f82c14"
+     
+          });
+        });
+    </script>
+<style>
+    .popup{
+        display: none;
+    }
+    .active{
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        background-color: whitesmoke;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        overflow-y: hidden;
+    }
+    .popup-flex{
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        width: 100%;
+ 
+    }
+    .popup-image{
+        min-width: 300px;
+    }
+    .popup-title{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: x-large;
+        margin-bottom: 1rem;
+    }
+    button{
+        background-color: white;
+        border: none;
+    }
+    #mousecircle {
+    z-index: 3;
+    }
+    @media screen and (max-width:768px) {
+        .popup-flex{
+            flex-direction: column;
+            overflow-y: scroll;
+            min-height: 100vh;
+        }
+        footer{
+            display: none;
+        }
+    }
+    
+</style>
+<script>
+    const carousel = document.querySelector('.scope');
+    const scopeItems = document.querySelectorAll('.scope_item');
+    const popup = document.getElementById('popup');
+    const popupImage = document.getElementById('popup-image');
+    const popupContent = document.getElementById('popup-description');
+    const closeBtn = document.getElementById('close-btn');
+    
+    scopeItems.forEach((scopeItem, index) => {
+        const popupLink = scopeItem.querySelector('.popup-link');
+        const imageSrc = popupLink.getAttribute('data-image');
+        const title =popupLink.getAttribute('data-title');
+        const text = popupLink.getAttribute('data-content');
+        
+        scopeItem.addEventListener('click', (event) => {
+            event.preventDefault();
+            
+            popupImage.src = imageSrc;
+
+            popupContent.innerHTML = `
+                <div class="popup-title">${title}</div>
+                <div class="popup-description">${text}</div>
+            `;
+
+            popup.classList.add('active');
+        });
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        popup.classList.remove('active');
+
+    });
+</script>
+
+
+{%endblock%}

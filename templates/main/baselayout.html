@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="icon" href="{% static 'images/logo_c.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/logo_c.png' %}" type="image/x-icon">
+
+    {% block css %}{% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>De Fayasite Kolektif</title>
+  
+</head>
+<body>
+    <!--   follows mouse-->
+    <div id="mousecircle"> </div> 
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo_c.png'%}" alt="">
+            </a>
+        </div>
+            <ul class="navlinks" id="navlinks">
+                <li><a href="{% url 'home' %}"> Home</a></li>
+                <li><a href="{% url 'blog' %}"> Blog</a></li>
+                <li><a href="{% url 'podcast' %}"> Podcast</a></li>
+                <li><a href="{% url 'events' %}"> Events</a></li>
+                <li><a href="{% url 'exhibitions' %}"> Exhibition</a></li>
+                <li><a href="{% url 'about' %}"> About</a></li>
+                <li>
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=E58WHJJ76W992" target="_blank" class="donate-button">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+
+        <div class="hamburger-lines" >
+
+            <img src="{% static 'icons/burger.png' %}" alt="hamburger menu" onclick="Toggle()" id="ham" style="width:3.5rem;">
+           <img src="{% static 'icons/x.png' %}" alt="hamburger menu" onclick="Toggle()" id="x" style="width: 2.5rem;">
+        </div> 
+    </nav>
+    <main>
+        {%block content%}
+        {%endblock%}
+    </main>
+    <div>
+        <div style="padding: 2rem 1rem; text-align: center;border-top:1px solid  rgba(17, 17, 26, 0.1) ;margin-top: 2rem;" id="subscribeToNewsletter">
+            <h3 style="font-size: xx-large; font-family: 'Times New Roman', Times, serif;">Join Our Weekly Newsletter</h3>
+            <p style="text-align: center;margin-block: 1rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi neque libero suscipit mollitia! Repellendus, neque.</p>
+            <form action="{% url 'subscribe' %}" method="post" style="display: flex; width: 100%;max-width: 700px; margin: auto;" id="newsletterForm">
+                
+                <input type="email" name="subscribeEmail" id="subscribeEmail" placeholder="Enter email address" style="padding:1rem;width: 100%;font-size: large;" required>
+                <input type="text" value="{{csrf_token}}" name="token" id="token" hidden>
+                <input type="submit" value="Subscribe" style="padding: 1rem; background-color: black;color: white;">
+            </form>
+            <p style="text-align: center;margin-top: 1rem;" id="successMessage" ></p>
+        </div>
+    </div>
+    <footer>
+        <div >
+            <div  class="footer-flex">
+                <div>
+                    <li>Contact</li>
+                    <li> About us</li>
+                    <li> Newsletter</li>
+                </div>
+                <div>
+                    <li>Impressum</li>
+                    <li> Datenshutz</li>
+                    <li> Privacy Policy</li>
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-socials"> 
+                    <a href='{{ contact_details.facebook}}' target="_blank"><span>Facebook</span></a>
+                    <a href='{{ contact_details.instagram}}' target="_blank"><span>Instagram</span></a>
+                    <a href='{{ contact_details.twitter}}' target="_blank"><span>Twitter</span></a>
+                    <a href='{{ contact_details.youtube}}' target="_blank"><span>Youtube</span></a>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div class="footer-flex no-flex">
+                <div>
+                    <p>Address</p>
+                    <br>
+                    <p>{{ contact_details.address }}</p>
+                </div>
+                <div>
+                    <p>Contact</p>
+                    <br>
+                    <p>T: {{contact_details.phone}}</p>
+                    <p>@ : {{contact_details.contact_email}}</p>
+                </div>
+            </div>
+
+            <div hidden>
+                <br>
+                <p>Partners</p>
+                <br>
+                <span>Partner 1</span> <span>Partner 2</span> <span>Partner 3</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        let circle = document.getElementById('mousecircle');
+        const onMouseMove = (e) => {
+        circle.style.left = e.pageX + 'px';
+        circle.style.top = e.pageY + 'px';
+        }
+        document.addEventListener('mousemove', onMouseMove);
+    </script>   
+
+    <script>
+        function Toggle() {
+          const toggle = document.getElementById('navlinks');
+          const xbar = document.getElementById('x');
+          const ham = document.getElementById('ham');
+        
+          if (toggle.style.display === '' || toggle.style.display === 'none') {
+            toggle.style.display = 'flex';
+            xbar.style.display = 'block';
+            ham.style.display = 'none';
+          } else {
+            toggle.style.display = 'none';
+            xbar.style.display = 'none';
+            ham.style.display = 'block';
+          }
+        }
+        </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#newsletterForm').submit(function(e) {
+                e.preventDefault();
+        
+                var email = $('#subscribeEmail').val();
+                var token = $('#token').val();
+                var myurl = '{% url 'subscribe' %}'; 
+        
+                $.ajax({
+                    url: myurl,
+                    type: 'POST',
+                    data: {
+                        'email': email,
+                        'csrfmiddlewaretoken': token
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        if (response){
+                            $('#successMessage').text(response.message).css('color','green')
+                            $('#subscribeEmail').val('');
+                        }
+                    },
+                    error: function(data) {
+                        console.log(data)
+                        $('#successMessage').text('Ooops something went wrong');
+                        $('#successMessage').css('color', 'red');
+        
+                    }
+                });
+            });
+        });
+        </script>
+</body>
+</html>
