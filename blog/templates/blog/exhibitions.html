@@ -12,7 +12,7 @@
             </div>
             {% for exhibition in exhibitions|slice:":8" %}
             <div class="scope_item" style="--i:{{ forloop.counter }};">
-                <a href="#" class="popup-link" data-image="{{ exhibition.image.url }}" data-title="{{exhibition.title|safe}}" data-content="{{exhibition.description|safe}}">
+                <a href="#" class="popup-link" data-image="{{ exhibition.image.url }}" data-title="{{exhibition.title|safe}}" data-content="{{exhibition.description}}"  data-artist="{{exhibition.author}}" data-material="{{exhibition.material}}">
                     <img src="{{ exhibition.image.url }}" alt="not found">
                 </a>
             </div>
@@ -20,7 +20,22 @@
         </div>
     </div>
 </section>
+<div>
+    <div class="details-container" >
+        <div style="max-width: 1100px;margin: auto;margin-bottom: 2rem;">
+            <h1 >Exhibition Overview:"even in retreat"</h1>
 
+            <p>Welcome to the current exhibition series titled &quot;even in retreat.&quot; This collection of art pieces delves deep into the complex interplay between resilience, activism, self-care, and the pursuit of social justice. Through this series, we explore the multifaceted meanings behind the phrase &quot;even in retreat,&quot; uncovering its paradoxical nature that simultaneously signifies strength in adversity and the need for restoration. &quot;even in retreat&quot; serves as both a rallying call and a contemplative expression. At its core, this phrase embodies the unwavering commitment we hold to each other and our shared mission for social justice. It is a testament to the fact that true strength and character are not only demonstrated in times of triumph, but are equally evident when navigating setbacks and challenges. It encapsulates the idea of persisting, even when circumstances may demand a temporary withdrawal or a reevaluation of our course. Yet, this phrase extends beyond these surface implications. It speaks to the necessity of acknowledging the importance of retreat, of stepping back and taking respite from the ongoing battle. Amid our shared struggles, we must recognize that compassion entails both enduring hardship together and granting ourselves space to heal and rejuvenate. The pieces in this collection are not meant to be rigidly deciphered or explicitly interpreted. They exist as intricate compositions that evoke a range of emotions and reactions but beyond that, they also serve as an aesthetic space for rest and wonder. While some might resonate with melodies of music, or text, they are first and foremost designed to provide aesthetic spaces for retreat. There is no predetermined narrative to uncover; these artworks are, first and foremost, aesthetic investments that invite viewers to engage on a personal and emotional level.</p>
+            <h3>From Retreat to Revelation</h3>
+            <p>This series germinated from a period of retreat, a deliberate step back from the public sphere. Driven by exhaustion and a realisation of overexertion, I came to understand that the relentless pursuit of change can often lead to burnout or worst, turn one into a rat running in a wheel. It was during this retreat that I confronted my own limitations and the collective impact of our best efforts. I realised that the world&apos;s challenges weren&apos;t solely a result of our (in)actions; they were deeply rooted in systems that span generations, perpetuating historical exploitation and injustice. This collection stands as an exploration of resistance, care, family, self-representation, and rest. It emerges from a place of questioning the nature of our interventions within these systems and the role of self-care when it is often treated as secondary.</p>The resonance of the series extends further through partnerships with friends and artists who have joined this creative conversation. Together, we orchestrate a symphony of diverse mediums and genres. Wan Shey, a collaborator on this journey, is contributing to a music album that amplifies the series&apos; themes. Meanwhile, hn. lyonga&apos;s poetic prowess breathes life into the core issues at hand. These collaborations foster a multi-dimensional experience, where each artist&apos;s perspective blends seamlessly into the tapestry of the series. &quot;even in retreat&quot; maintains its vibrant spectrum of mediums and genres, weaving together an intricate tapestry of ideas, textures, lives, and worlds. Visual art and music harmonise to convey emotions that words alone cannot encapsulate. These forms of expression serve as vessels for exploring the intricacies of resistance, self-care, familial bonds, the potency of speech, identity representation, and the indispensable need for retreat. Through this diverse collaboration, the series gains depth, layers, and an amplified resonance. The collective effort reveals that the concept of &quot;even in retreat&quot; transcends individual interpretations and becomes a shared conversation about navigating the complex terrain of social justice, resilience, and rejuvenation. By uniting narratives and viewpoints, &quot;even in retreat&quot; evolves into more than just an art series; it becomes a platform for dialogue and exchange. It transforms into a space where artists converse across mediums, breathing life into themes that touch the core of our existence. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            <h3>Reimagining Care: Collaborative Acts of Resistance</h3>
+            <p>The collaborations within the &quot;even in retreat&quot; series venture into an entirely new dimension of care, inviting critical contemplation of established notions of therapy and the inherent pathologization that often accompanies them. This creative alliance, while questioning established norms, reframes friendships and families as potent sources of caregiving, carving a path toward a more holistic understanding of support. Within this collaborative exploration, fundamental questions emerge about the prevailing definitions of therapy and rest. The series prompts us to consider whether our perceptions of rejuvenation are entangled with the idea of restoring our capacity to function within a system that exploits us. A system that not only overlooks our need for rest but also insists that we must become efficient and productive components of it. These collaborations urge us to examine how deeply we have internalised these systemic expectations. It&apos;s the very same system that not only compels us to be productive but also demands that we love and find satisfaction in the very jobs that estrange and exploit us. This system&apos;s influence extends to the point of pathologizing our natural need for rest, pushing us into a relentless cycle of &quot;efficiency&quot; that masks the systemic inequities at play. By fostering these collaborations, the &quot;even in retreat&quot; series challenges us to reconsider our roles within this system. It prods us to question whether rest should merely be a means to reinforce our ability to engage with a system that often perpetuates our oppression. Through these collaborative endeavours, we reposition friendships and families as caregivers. This shift reconceptualizes care as a communal effort, emphasising the importance of solidarity, understanding, and collective healing. The series encourages us to find refuge within the networks we create, rather than relying solely on impersonal and potentially alienating systems. &quot;even in retreat&quot; calls us to reevaluate our relationship with the systems that govern us, as well as our relationships with each other. It underscores the necessity of creating spaces for authentic rest and rejuvenation, unburdened by the pressures of a society that values productivity over humanity.</p>
+            
+        </div>
+        </div>
+    </div>
+
+</div>
 
 <div class="popup" id="popup">
     <div class="popup-content">
@@ -31,7 +46,9 @@
             <div class="popup-image">
                 <img src="" alt="Popup Image" id="popup-image" width="100%">
             </div>
+
             <div class="popup-description" id="popup-description"></div>
+
         </div>
     </div>
 </div>
@@ -66,6 +83,18 @@
         });
     </script>
 <style>
+    h1{
+        font-size: 3rem;
+        font-family: 'Times New Roman', Times, serif;
+        letter-spacing: 3px;
+        margin-block: 1rem 2rem;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    h3{
+        margin-block: 2rem 1rem;
+        font-family: 'Times New Roman', Times, serif;
+    }
     .popup{
         display: none;
     }
@@ -81,19 +110,25 @@
         overflow-y: hidden;
     }
     .popup-flex{
-        display: flex;
         gap: 2rem;
         padding: 1rem;
         width: 100%;
+        max-width: 900px;
+        margin: auto;
  
     }
     .popup-image{
         min-width: 300px;
+        border:4px solid black;
+    }
+    .popup-description p{
+        font-size: large;
+
     }
     .popup-title{
         font-family: 'Times New Roman', Times, serif;
-        font-size: x-large;
-        margin-bottom: 1rem;
+        font-size: 2.1rem;
+        margin-block: 2rem;
     }
     button{
         background-color: white;
@@ -102,6 +137,16 @@
     #mousecircle {
     z-index: 3;
     }
+    .details{
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .details-container{
+margin-top: 2rem;    }
+    .details span{
+        font-weight: normal;
+    }
+    #subscribeToNewsletter{display: none;}
     @media screen and (max-width:768px) {
         .popup-flex{
             flex-direction: column;
@@ -118,8 +163,10 @@
     const carousel = document.querySelector('.scope');
     const scopeItems = document.querySelectorAll('.scope_item');
     const popup = document.getElementById('popup');
-    const popupImage = document.getElementById('popup-image');
+    const popupArtist = document.getElementById('artist');
     const popupContent = document.getElementById('popup-description');
+    const popupMaterial = document.getElementById('material');
+    const popupImage = document.getElementById('popup-image');
     const closeBtn = document.getElementById('close-btn');
     
     scopeItems.forEach((scopeItem, index) => {
@@ -127,6 +174,8 @@
         const imageSrc = popupLink.getAttribute('data-image');
         const title =popupLink.getAttribute('data-title');
         const text = popupLink.getAttribute('data-content');
+        const artist = popupLink.getAttribute('data-artist');
+        const material = popupLink.getAttribute('data-material');
         
         scopeItem.addEventListener('click', (event) => {
             event.preventDefault();
@@ -134,6 +183,10 @@
             popupImage.src = imageSrc;
 
             popupContent.innerHTML = `
+                <div class="details-container">
+                    <p class="details"> Material: <span id="material">${artist} </span></p>
+                    <p class="details">Artist: <span id="artist">${material} </span></p>
+                </div>
                 <div class="popup-title">${title}</div>
                 <div class="popup-description">${text}</div>
             `;

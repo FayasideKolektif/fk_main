@@ -17,8 +17,9 @@ class Category(models.Model):
 # Create your models here.
 class Articles (models.Model):    
     user = models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
-    title = models.CharField( max_length=100)
-    tagline=models.CharField(max_length=100 ,blank=True,null=True)
+    author =models.CharField( max_length=800,null=True,blank=True)
+    title = models.CharField( max_length=800)
+    tagline=models.CharField(max_length=1000 ,blank=True,null=True)
     date =models.DateTimeField()
     image = CloudinaryField('image',folder='article_images')
     body = RichTextField( blank=True, null=True)
@@ -44,7 +45,7 @@ class Articles (models.Model):
         return self.liked.all().count()
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)
+            self.slug = slugify(self.title[:50])
         super().save(*args, **kwargs)
 
 class Comments (models.Model):
@@ -106,9 +107,9 @@ class SiteContacts(models.Model):
 class Exhibition(models.Model):
     #image = models.FileField()
     image = CloudinaryField('image',folder='exhibition_images')
-    material = models.CharField(max_length=200,null=True,blank=True)
-    title = models.CharField( max_length=200)
-    author = models.CharField( max_length=200,default='Fayaside Kolectif')
+    material = models.CharField(max_length=500,null=True,blank=True)
+    title = models.CharField(max_length=500)
+    author = models.CharField( max_length=500,default='Fayaside Kolectif')
     description = RichTextField( blank=True, null=True)
     slug = models.SlugField(blank=True,null=True,help_text='Optional')
     date = models.DateTimeField(auto_now_add=True)
@@ -116,3 +117,5 @@ class Exhibition(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+    def __str__(self):
+        return self.title

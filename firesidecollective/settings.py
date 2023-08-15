@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = 
 SECRET_KEY = 'django-insecure-)@bvg8y^z+-aoaov$_pxzmb3oxiy!6-mh=jrv20the1j@b@02y'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['fsk-oya4.onrender.com','defayasitekolektif.org','www.defayasitekolektif.org']
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1','fsk-oya4.onrender.com','defayasitekolektif.org','www.defayasitekolektif.org']
 
 # Application definition
 

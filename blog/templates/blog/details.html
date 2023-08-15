@@ -23,9 +23,9 @@
         <h1 id="title"> <a href="{% url 'details' courseid=article.slug %}"> {{ article.title }}  </a> </h1>
         <br>
         <p style="color:grey; font-size: 1.5rem; margin-bottom: 1rem;" > {{ article.tagline}}</p>
-        <p style="color: grey;"> 
-                {% if article.user%}
-                    {{article.user.username|title}}
+        <p style="color: grey;margin-bottom: 10px;"> 
+                {% if article.author%}
+                  By:  {{article.author|title}}
                 {%endif%}
         </p>
         <p class="date"> {{article.date}} </p>
@@ -61,7 +61,7 @@
     <br>        
     <style>
       .a2a_kit.a2a_kit_size_32 .a2a_svg {
-          background-color: rgba(0, 0, 0, 0.9) !important;
+          background-color: rgba(0, 0, 0, 0.7) !important;
           border-radius: 0 !important;
       }
   </style>

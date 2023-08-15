@@ -11,7 +11,7 @@ admin.site.register(Exhibition)
 class ArticleAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Basic Information', {
-            'fields': ('user', 'title', 'tagline', 'date', 'tags', 'slug'),
+            'fields': ('user','author','title', 'tagline', 'date', 'tags', 'slug'),
         }),
         ('Content', {
             'fields': ('image', 'body'),
