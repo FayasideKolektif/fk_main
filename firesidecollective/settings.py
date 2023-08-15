@@ -26,11 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
-
+DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS =['localhost','127.0.0.1']
 if not DEBUG:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 # Application definition
 
 INSTALLED_APPS = [
@@ -154,7 +153,7 @@ CACHES = {
 }
           
 cloudinary.config( 
-  cloud_name = os.environ.get('cloud_name') ,
-  api_key = os.environ.get('api_key'), 
-  api_secret = os.environ.get('api_secret') 
+  cloud_name = os.getenv('cloud_name') ,
+  api_key = os.getenv('api_key'), 
+  api_secret = os.getenv('api_secret') 
 )
