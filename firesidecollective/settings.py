@@ -24,12 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-)@bvg8y^z+-aoaov$_pxzmb3oxiy!6-mh=jrv20the1j@b@02y'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
-ALLOWED_HOSTS =['localhost','127.0.0.1']
-if not DEBUG:
-    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
+DEBUG = False
+ALLOWED_HOSTS = ['fsk-oya4.onrender.com','defayasitekolektif.org','www.defayasitekolektif.org']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -153,7 +152,7 @@ CACHES = {
 }
           
 cloudinary.config( 
-  cloud_name = os.getenv('cloud_name') ,
-  api_key = os.getenv('api_key'), 
-  api_secret = os.getenv('api_secret') 
+cloud_name ="dptm3oz7l",
+api_key ="134758823949343",
+api_secret= "Nsi0Di2BHizl5chv-yyn9v_TrH4"
 )
