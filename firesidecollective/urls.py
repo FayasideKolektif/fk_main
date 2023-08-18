@@ -24,10 +24,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home ,name='home'),
     path('exhibitions',views.exhibitions ,name='exhibitions'),
+    path('subscribe', views.subscribe, name='subscribe'),
     path('blog/',include('blog.urls')),
     path('podcast',include('podcast.urls')),
     path('about',views.about,name='about' ),
-    path('events/',include('events.urls'))
+    path('events/',include('events.urls')),
+    
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

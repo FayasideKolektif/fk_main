@@ -149,28 +149,7 @@ def contact(request):
     return HttpResponseRedirect(reverse('contact'))
 
 
-def subscribe(request):
-    if request.method == 'POST':
-                email = request.POST.get('email')
-                if email:
-                    if NewsletterEmail.objects.filter(email=email).exists():
-                        return JsonResponse({'message': 'You are already registered to Newsletter'})
-                    else:
-                        NewsletterEmail.objects.create(email=email)
-                        client = MailChimp(mc_api=settings.MAILCHIMP_API_KEY)
 
-                        # Add the user's email to the Mailchimp list
-                        client.lists.members.create(
-                            settings.MAILCHIMP_LIST_ID,
-                            {
-                                'email_address': email,
-                                'status': 'subscribed'
-                            }
-                        )
-                        return JsonResponse({'message': 'Email added  successfully!'})
-
-
-    return JsonResponse({'error':'Opps something went wrong .Please try again!'})
 """ 
 def highlight(request):
     user = request.user

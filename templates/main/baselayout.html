@@ -35,7 +35,7 @@
                 <li><a href="{% url 'podcast' %}"> Podcast</a></li>
                 <li><a href="{% url 'events' %}"> Events</a></li>
                 <li><a href="{% url 'exhibitions' %}"> Exhibition</a></li>
-                <li><a href="https://shop.defayasitekolektif.org">Shop</a></li>
+                <li><a href="https://shop.defayasitekolektif.org/catalogue/" target="_blank">Shop</a></li>
                 <li><a href="{% url 'about' %}"> About</a></li>
                 <li>
                     <a href="https://www.paypal.com/donate/?hosted_button_id=E58WHJJ76W992" target="_blank" class="donate-button">
@@ -58,11 +58,10 @@
         <div style="padding: 2rem 1rem; text-align: center;border-top:1px solid  rgba(17, 17, 26, 0.1) ;margin-top: 2rem;" id="subscribeToNewsletter">
             <h3 style="font-size: xx-large; font-family: 'Times New Roman', Times, serif;">Join Our Weekly Newsletter</h3>
             <p style="text-align: center;margin-block: 1rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi neque libero suscipit mollitia! Repellendus, neque.</p>
-            <form action="{% url 'subscribe' %}" method="post" style="display: flex; width: 100%;max-width: 700px; margin: auto;" id="newsletterForm">
-                
+            <form action="" method="post" style="display: flex; width: 100%;max-width: 700px; margin: auto;" id="newsletterForm">
                 <input type="email" name="subscribeEmail" id="subscribeEmail" placeholder="Enter email address" style="padding:1rem;width: 100%;font-size: large;" required>
                 <input type="text" value="{{csrf_token}}" name="token" id="token" hidden>
-                <input type="submit" value="Subscribe" style="padding: 1rem; background-color: black;color: white;">
+                <input type="submit" value="Subscribe" style="padding: 1rem; background-color: black;color: white; " data-loading="Sending" id="readmore">
             </form>
             <p style="text-align: center;margin-top: 1rem;" id="successMessage" ></p>
         </div>

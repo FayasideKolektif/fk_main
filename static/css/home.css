@@ -250,7 +250,6 @@ section.articles h3{
 .podcast-container{
     display: flex;
     justify-content: space-between;
-    font-size: 1.3rem;
     align-items: center;
     background-color: whitesmoke;
     padding: 2rem;
