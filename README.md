@@ -18,7 +18,7 @@ This project utilizes the following technologies:
 - The email address (mail@defayasidekolektif.org) is currently on a free trial until **October 8, 2023**. It can be renewed for an additional 2 months of free trial (all previous emails will be lost), or you can purchase a 1-year minimum subscription on Namecheap for 1.15€ per month.
 - The domain is registered on Namecheap ([https://www.namecheap.com](https://www.namecheap.com)) and is valid until **August 3, 2025**.
 
-## Warnings
+## Warnings !!!
 
 - This repository must remain private due to the presence of sensitive information. If you intend to make it public, ensure that all API keys and secret keys are stored separately as environmental variables.
 
@@ -44,6 +44,11 @@ This project utilizes the following technologies:
 ### Blog
 
 - Create blog articles using the Django admin panel.
+
+### Shop
+
+- shop available on subdomain under https://shop.defayasitekolektif.org
+
 
 ### Site Contact Details / Social Details
 
