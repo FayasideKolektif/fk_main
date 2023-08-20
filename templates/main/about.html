@@ -16,14 +16,16 @@
 
 <div style="background-color: white;margin-block: 2rem;">
         <div class="mission_vision">
-            <h3>Mission→ </h3>
+            <h3>Mission <img src="{% static 'icons/next.png' %}" alt="" width="50px">
+            </h3>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. A iusto magni impedit nesciunt, eligendi rerum! Suscipit, mollitia aut? Neque ipsam accusantium repudiandae corporis sequi blanditiis laborum, nisi velit officiis. Laboriosam pariatur a nostrum adipisci. Tenetur, vel. Nisi magni quaerat dolores, temporibus magnam excepturi quas, earum placeat similique ratione veniam error!
             </p>
         </div>
         <hr>
         <div class="mission_vision">
-            <h3>Vision↗</h3>
+            <h3>Vision <img src="{% static 'icons/top.png' %}" alt="" width="50px">
+            </h3>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. A iusto magni impedit nesciunt, eligendi rerum! Suscipit, mollitia aut? Neque ipsam accusantium repudiandae corporis sequi blanditiis laborum, nisi velit officiis. Laboriosam pariatur a nostrum adipisci. Tenetur, vel. Nisi magni quaerat dolores, temporibus magnam excepturi quas, earum placeat similique ratione veniam error!
             </p>
@@ -31,7 +33,8 @@
         <hr>
 </div>
 <div>
-    <h3>Projects↘ </h3>
+    <h3>Projects            <img src="{% static 'icons/bottom-right.png' %}" alt="" width="50px">
+    </h3>
     <p style="margin-block: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet perferendis incidunt error voluptates consequuntur velit, architecto laboriosam aspernatur maiores in cum omnis aliquam, quae aperiam possimus et, beatae doloremque soluta eos odit sed! Ullam harum debitis modi tempora, consectetur placeat.</p>
     <div class="flex">
         <div>
@@ -199,6 +202,12 @@ h3{
     font-size: 4rem;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 10px;
+}
+h3 {
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    
 }
 .mission_vision{
     margin-block: 1rem;
