@@ -40,7 +40,7 @@ The space will also host an art studio and music recording studio, these dedicat
 </p>
 </div>
 <div>
-    <div class="flex">
+    <div class="flex" style="overflow-x: scroll;">
         <div>
             <div class="img-description">
                 <img src="{% static 'images/FR4-1.png' %}" alt="project image">
@@ -278,7 +278,7 @@ header li:hover{
     margin-block:2rem ;
 }
 .img-description{
-    width: 100%;
+    min-width: 300px;
     position: relative;
 }
 .img-description img{
@@ -468,6 +468,7 @@ li.error{
         }
         h3{
             font-size: 3rem;
+            line-height: 3rem;
         }        
     }
 </style>
