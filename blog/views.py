@@ -16,8 +16,10 @@ from django.http import  JsonResponse
 #Shared view data
 def data():
     global articles_list
-    articles_list=Articles.objects.filter(publish=True).order_by('-date')
-    return articles_list
+    articles_list=Articles.objects.filter(publish=True).order_by('-date') 
+    duplicated_list = [item for item in articles_list for _ in range(12)]
+
+    return duplicated_list
 
 def bloghome(request):
        category= request.GET.get('category')
@@ -30,7 +32,7 @@ def bloghome(request):
             if category == 'All':
                 articles=data()
             else:
-                articles = Articles.objects.filter(publish=True).filter(category=category).order_by('-date')
+                articles = Articles.objects.filter(publish=True).filter(category=category).order_by('-date') 
                 active = category
        else:
             articles=data()  

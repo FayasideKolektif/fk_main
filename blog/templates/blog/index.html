@@ -14,9 +14,9 @@
 {%endif%}
 </div>
         <div>
-            <form action="{% url 'search' %}"  style="display: flex; width: 100%;max-width: 900px; margin: auto; padding: .6rem;margin-block: 1rem;" >
-                <input type="text" name="searchterm" id="" placeholder="search Blog item" style="padding:.6rem;width: 100%;font-size: large;">
-                <input type="submit" value="search" style="padding: .6rem; background-color: rgba(0, 0, 0, 0.865);color: white;">
+            <form action="{% url 'search' %}"  style="display: flex; width: 100%; margin: auto; padding: .6rem;margin-block: 1rem;" >
+                <input type="text" name="searchterm" id="" placeholder="search Blog item" style="padding:.6rem;width: 100%;font-size: large;border: 1px solid grey;">
+                <input type="submit" value="search" style="padding: .6rem; background-color: rgba(0, 0, 0, 0.865);color: white;border: none;">
             </form>
         </div>
         {% if paginated_article %}
@@ -27,7 +27,6 @@
         <ol class="article-list"> 
 
             {% for article in paginated_article %}
-            {% for _ in '123456789' %}
             <li> 
                 
                 <article>
@@ -36,17 +35,15 @@
                         </span>
                     {% endif %} 
                     <div class="article_image"  style=" background: url('{{article.image.url}}');background-position:center;
-                    background-size:cover; background-repeat: no-repeat;">
+                    background-size:cover; background-repeat: no-repeat;" onclick="window.open('{% url 'details' courseid=article.slug %}','_self');">
                     </div>
                     <div class="article_element" >
                         <p style="color: grey;"> {{article.category}}</p>
                         <h2 ><a href="{% url 'details' courseid=article.slug %}" style="font-weight: 200;"> {{article.title|title}}</a></h2>
-                        <a href="{% url 'details' courseid=article.slug %}"> <button id="readmore">Read More</button> </a> 
                     </div>      
                 </article>
                 
             </li>
-            {% endfor %}
             {% endfor %}
         </ol>
         <p style="text-align:center; background-color: whitesmoke;padding: 1rem; max-width: 850px; margin: auto;"> Page  {{paginated_article.number}} of  {{ paginated_article.paginator.num_pages }} </p>  
