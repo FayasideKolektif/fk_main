@@ -26,6 +26,7 @@ urlpatterns = [
     path('exhibitions',views.exhibitions ,name='exhibitions'),
     path('subscribe', views.subscribe, name='subscribe'),
     path('blog/',include('blog.urls')),
+    path('account/',include('accounts.urls')),
     path('podcast',include('podcast.urls')),
     path('about',views.about,name='about' ),
     path('events/',include('events.urls')),

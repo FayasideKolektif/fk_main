@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'events',
-    'cloudinary'
+    'cloudinary',
+    'accounts'
 
 ]
 

@@ -8,7 +8,11 @@ from taggit.managers import TaggableManager
 from django.core.cache import cache
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
-
+CATEGORY_CHOICES = (
+        ('News', 'News'),
+        ('Article', 'Article'),
+    )
+    
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -18,6 +22,7 @@ class Category(models.Model):
 class Articles (models.Model):    
     user = models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
     author =models.CharField( max_length=800,null=True,blank=True)
+    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='Article')
     title = models.CharField( max_length=800)
     tagline=models.CharField(max_length=1000 ,blank=True,null=True)
     date =models.DateTimeField()

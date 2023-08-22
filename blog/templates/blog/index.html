@@ -7,7 +7,7 @@
 <div class="blogcontainer">
 
 <div>
-    {%if searched%}
+    {% if searched%}
         <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;"> Your search result for "{{ searched }}"</h1>
         <br>
         <p style="text-align: center; color:grey;">{{count}} result(s) found</p>
@@ -37,6 +37,7 @@
                     background-size:cover; background-repeat: no-repeat;">
                     </div>
                     <div class="article_element" >
+                        <p style="color: grey;"> {{article.category}}</p>
                         <h2 ><a href="{% url 'details' courseid=article.slug %}" style="font-weight: 200;"> {{article.title|title}}</a></h2>
                         <a href="{% url 'details' courseid=article.slug %}"> <button id="readmore">Read More</button> </a> 
                     </div>      

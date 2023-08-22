@@ -16,12 +16,17 @@
         <h1 >FAYASITE KOLEKTIF</h1>
     </div>
     <div class="intro-right">
-        <p> 'Nurture the flame of conversation, regardless of differing views' </p>
+        <div class="circle" onclick="location.href='#values';" id="rotatetext">
+            <div class="text" >
+              <p> scroll. down. scroll. down  </p>
+            </div> 
+            <a href="#values"> <img src="https://img.icons8.com/ios-filled/35/null/chevron-down.png" alt="icon-arrow down"/></a>
+          </div>
     </div>
 </div>
 <section class="about" style="background: url('{% static 'images/maskpattern.jpg' %}')">
     <div>
-        <p class="tagline">a mixed-use space for pan-african culture and thought from the left</p>
+        <p class="tagline">A dynamic and radical space for decolonial exploration,critical dialogue,artistic expression and community engagement.</p>
     </div>
 </section>
 
@@ -29,31 +34,30 @@
     <div class="columns">
         <div class="column">
             <div class="mouse_alerts" data-message="LEARN MORE">
-                <h5>Gallery</h5>
+                <h5>Architectural Concept and plan</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perferendis, cum harum nostrum maiores atque amet quisquam ipsa adipisci nemo? Excepturi perspiciatis nulla obcaecati non quae, quibusdam architecto corrupti laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?</p>
             </div>
-
-            <div class='column-image' style="background-image: url('https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-            </div>
-            <div class="mouse_alerts" data-message="LEARN MORE">
-                <h5>Study Space</h5>
+            <div class='column-image' style="background-image: url('https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+            <div class="mouse_alerts" data-message="LEARN MORE" hidden>
+                <h5>Exhibitions</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda rerum recusandae inventore voluptatem natus quaerat, suscipit aut explicabo nulla ex.
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?</p>
             </div>
             <div class='column-image' style="background:url('https://images.pexels.com/photos/1384614/pexels-photo-1384614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
 
         </div>
-        <div class="column column-reverse">
-            <div >
-            </div>
+        <div class="column column-reverse">        
+            <div></div>
             <div class="mouse_alerts" data-message="LEARN MORE">
                 <h5>Event Halls</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, rerum.</p>
             </div>
             <div class='column-image' style="background:url('https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
             <div>
+                <h3>Youtube</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quisquam.</p>
             </div>
+            <div class='column-image' style="background:url('https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
         </div>
     </div>
 <hr>
@@ -128,8 +132,47 @@
     </div>
 </section>
 
-
-
+<style>
+.text{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: rotate 10s linear infinite;
+    font-size: medium;
+}
+.text span{
+  position: absolute;
+  left:50%;
+  transform-origin:0 75px;
+}
+.circle{
+    position:relative;
+    width: 150px;
+    height: 150px;
+    margin: 0  auto;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+font-size: smaller;
+    cursor: pointer;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(-0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }}
+</style>
+<script>
+        const text = document.querySelector(".text p");
+    text.innerHTML = text.innerText.split('').map(
+      (char, i) =>
+        `<span style="transform:rotate(${i * 13.3}deg)">${char}</span>`
+    ).join('');
+  
+</script>
 <script>
     let preloader = document.getElementById("preloader");
     setTimeout(function () {

@@ -26,7 +26,6 @@ def exhibitions(request):
 def subscribe(request):
     if request.method == 'POST':
                 email = request.POST.get('email')
-                print(email)
                 if email:
                     print('Got the mail')
                     if NewsletterEmail.objects.filter(email=email).exists():

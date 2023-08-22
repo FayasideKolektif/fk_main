@@ -4,7 +4,7 @@ from django.db.utils import IntegrityError as DjangoIntegrityError
 
 from django.shortcuts import redirect, render,get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Articles, Like,NewsletterEmail
+from .models import Articles, Like
 from .forms import CommentForm
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy,reverse

@@ -8,5 +8,6 @@ urlpatterns = [
     path('search/',views.search, name='search'),
     path('<slug:courseid>/like',views.applaud, name='like_article'),
     path('contactprocess',views.contact, name='contactprocess'),
+    
 
 ]

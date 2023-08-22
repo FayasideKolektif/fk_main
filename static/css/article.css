@@ -72,7 +72,8 @@
 }
 .articleBody{
     line-height:1.8em;
-    font-size: 1.2rem;  
+    font-size: 1.2rem; 
+    text-align: justify;
 }
 q{
     font-weight: bold; 
@@ -94,18 +95,7 @@ q::before{
 .paginationNav div{
     width: 50%;
 }
-.audioplay{
-    margin-top: 1rem;
-    background-color: lightgray;
-}
-.audioplay button{
-border: none;
-background-color: white;
-height: 40px;
-width: 40px;
-border-radius: 50%;
-color: black;
-}
+
 
 @media screen and (max-width:768px) {
 .articles{
