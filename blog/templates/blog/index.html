@@ -27,7 +27,9 @@
         <ol class="article-list"> 
 
             {% for article in paginated_article %}
+            {% for _ in '123456789' %}
             <li> 
+                
                 <article>
                     {% if paginated_article %}
                         <span class="recentPost">{{ article.date|date:"d" }}<br>{{ article.date|date:"F" }}
@@ -42,7 +44,9 @@
                         <a href="{% url 'details' courseid=article.slug %}"> <button id="readmore">Read More</button> </a> 
                     </div>      
                 </article>
+                
             </li>
+            {% endfor %}
             {% endfor %}
         </ol>
         <p style="text-align:center; background-color: whitesmoke;padding: 1rem; max-width: 850px; margin: auto;"> Page  {{paginated_article.number}} of  {{ paginated_article.paginator.num_pages }} </p>  
