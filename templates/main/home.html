@@ -34,30 +34,34 @@
     <div class="columns">
         <div class="column">
             <div class="mouse_alerts" data-message="LEARN MORE">
-                <h5>Architectural Concept and plan</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perferendis, cum harum nostrum maiores atque amet quisquam ipsa adipisci nemo? Excepturi perspiciatis nulla obcaecati non quae, quibusdam architecto corrupti laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?</p>
-            </div>
-            <div class='column-image' style="background-image: url('https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                <h5>Igniting Decolonized Futures</h5>
+                <p>
+                    Fayasite Kollectif—more than an artistic collective—ignites decolonized futures. We gather around the fireside of creativity, community, and radical change.
+                </p>
+          </div>
+            <div class='column-image' style="background-image: url('{% static 'images/black_and_white_handdrawn_style_line_doodle_pattern_background.jpg' %}');"></div>
             <div class="mouse_alerts" data-message="LEARN MORE" hidden>
-                <h5>Exhibitions</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda rerum recusandae inventore voluptatem natus quaerat, suscipit aut explicabo nulla ex.
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?</p>
+                <h5>Artistry, Library, Hub</h5>
+                <p>
+                    We're a hub of creativity, a living library, and an artistic haven. Join us in reimagining decolonial narratives and nurturing new worlds.
+                </p>  
             </div>
-            <div class='column-image' style="background:url('https://images.pexels.com/photos/1384614/pexels-photo-1384614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
+            <div class='column-image' style="background:url('http://res.cloudinary.com/dptm3oz7l/image/upload/v1692129370/exhibition_images/xpaswcymtrnnudvu0yra.jpg') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
 
         </div>
         <div class="column column-reverse">        
-            <div></div>
             <div class="mouse_alerts" data-message="LEARN MORE">
-                <h5>Event Halls</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed sequi esse magnam temporibus excepturi adipisci atque quas in doloribus?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, rerum.</p>
+                <h5>Exhibitions</h5>
+                <p>
+                    Discover our current exhibition, "even in retreat," where art explores resilience, activism, self-care, and social justice. Delve into the paradoxical strength of this phrase as it signifies both facing adversity and seeking restoration. These artworks reflect unwavering commitment, highlighting the beauty of persisting through setbacks. "even in retreat" embodies compassion, reminding us to heal amidst struggles. Engage with these intricate pieces, inviting personal connection and offering moments of wonder and reflection.
+                </p>
             </div>
-            <div class='column-image' style="background:url('https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
+            <div class='column-image' style="background-image: url('{% static 'images/Untitled design (4).png' %}');"></div>
             <div>
-                <h3>Youtube</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quisquam.</p>
+                <h5>Spaces of Transformation</h5>
+                <p>Architecting a space for music, art, and exploration, we're cultivating change. Fuel ideas and ideals within these walls—join us in shaping justice and self-determination.</p>
             </div>
-            <div class='column-image' style="background:url('https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
+            <div></div>
         </div>
     </div>
 <hr>
@@ -124,9 +128,9 @@
                 <a href="{% url 'podcast' %}"> <button id="readmore" class="readmore-podcast">Visit Podcast → </button> </a> <br>
                 <br>
             <ul class="podcasthost">
-                    <li><span> <img src="{% static 'icons/spotify.png' %}" alt="spotify-logo"></span></li>
-                    <li><span><img src="{% static 'icons/applepodcast.png' %}" alt="applepodcast-logo"></span></li>
-                    <li><span><img src="{% static 'icons/youtube.png' %}" alt="youtube-logo"></span></li>
+                    <li><a href="{{ contact_details.spotify}}"> <img src="{% static 'icons/spotify.png' %}" alt="spotify-logo"></a></li>
+                    <li><a href="{{ contact_details.applepodcast}}"><img src="{% static 'icons/applepodcast.png' %}" alt="applepodcast-logo"></a></li>
+                    <li><a href="{{ contact_details.youtube}}"><img src="{% static 'icons/youtube.png' %}" alt="youtube-logo"></a></li>
             </ul>  
         </div>
          <div class="podcast-image" >

@@ -23,12 +23,12 @@
                   <br> {{event.date|date:"Y"}}</div>
               <div class="event_info">
                   <p class="event_title"> {{event.title}}</p>
-                  <p style="font-family: 'Times New Roman', Times, serif; font-size: larger;margin-bottom: .5rem; display: flex; gap:10px;color: grey;"> 
-                    <span style="display: flex;align-items: center;gap: 10px; font-family: inherit;"><img src="{% static 'icons/clock.png' %}" alt="" style="width: 20px;"> {{event.time}} </span>  |
-                    <span style="display: flex;align-items: center;gap: 10px; font-family: inherit;"><img src="{% static 'icons/location.png' %}" alt="" style="width: 25px;"> {{event.venue}} </span> 
+                  <p style="margin-bottom:1rem;font-size:large;color:grey"> 
+                    <span style="display: flex;align-items: center;gap: 10px; font-family: inherit;"><img src="{% static 'icons/clock.png' %}" alt="" style="width: 17px;"> {{event.time|title}} </span> 
+                    <span style="display: flex;align-items: center; font-family: inherit;"><img src="{% static 'icons/location.png' %}" alt="" style="width: 30px; margin-left: -6px;"> {{event.venue}} </span> 
                   </p>
                   <p class="event_description">{{event.description}}</p>
-                  <p style="margin-top: 20px;"> - {{event.organizer}}</p>
+                  <p style="margin-top: 20px;">  {{event.organizer}}</p>
               </div>
           </div>
       </a>
