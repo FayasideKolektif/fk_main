@@ -20,8 +20,6 @@
   
 </head>
 <body>
-    <!--   follows mouse-->
-    <div id="mousecircle"> </div> 
     <nav>
         <div class="logo">
             <a href="{% url 'home' %}">
@@ -118,14 +116,7 @@
     </footer>
 
 
-    <script>
-        let circle = document.getElementById('mousecircle');
-        const onMouseMove = (e) => {
-        circle.style.left = e.pageX + 'px';
-        circle.style.top = e.pageY + 'px';
-        }
-        document.addEventListener('mousemove', onMouseMove);
-    </script>   
+ 
 
     <script>
         function Toggle() {
