@@ -31,22 +31,14 @@
 </section>
 
 
-    <div class="columns">
+    <div class="columns" id="values">
         <div class="column">
             <div class="mouse_alerts" data-message="LEARN MORE">
-                <h5>Igniting Decolonized Futures</h5>
+                <h5>Imagining Decolonial Futures</h5>
                 <p>
-                    Fayasite Kollectif—more than an artistic collective—ignites decolonized futures. We gather around the fireside of creativity, community, and radical change.
-                </p>
+                    The Fayasite Kolektif is both an artist collective and a dynamic space that serves as a hub for intersectional exploration, fostering critical dialogue, community empowerment, and the creative envisioning of decolonial futures.           </p>
           </div>
           <div class='column-image' style="background:url('https://images.pexels.com/photos/6334064/pexels-photo-6334064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
-          <div class="mouse_alerts" data-message="LEARN MORE" hidden>
-                <h5>Artistry, Library, Hub</h5>
-                <p>
-                    We're a hub of creativity, a living library, and an artistic haven. Join us in reimagining decolonial narratives and nurturing new worlds.
-                </p>  
-            </div>
-            <div class='column-image' style="background:url('http://res.cloudinary.com/dptm3oz7l/image/upload/v1692129370/exhibition_images/xpaswcymtrnnudvu0yra.jpg') ;background-position: center; background-repeat: no-repeat;background-size: cover;"></div>
 
         </div>
         <div class="column column-reverse">        
@@ -57,11 +49,7 @@
                 </p>
             </div>
             <div class='column-image' style="background-image: url('{% static 'images/Untitled design (4).png' %}');"></div>
-            <div>
-                <h5>Spaces of Transformation</h5>
-                <p>Architecting a space for music, art, and exploration, we're cultivating change. Fuel ideas and ideals within these walls—join us in shaping justice and self-determination.</p>
-            </div>
-            <div></div>
+
         </div>
     </div>
 <hr>
@@ -69,7 +57,6 @@
 <h3>Articles</h3>
 <div class="articles-container mouse_alerts"> 
     {% for article in articles %}
-    {% for _ in '123456789' %}
 
         <article>
             {% if paginated_article %}
@@ -85,7 +72,6 @@
                 <a href="{% url 'details' courseid=article.slug %}"> <button id="readmore">Read More</button> </a>
             </div>      
         </article>
-    {% endfor %}
     {% endfor %}
 </div>
     <a href="{% url 'blog' %}?category=article" style="width: 100%;"> <button id="readmore" style="border-color: silver;padding: 1em 2em;">All Articles</button> </a> <br>
