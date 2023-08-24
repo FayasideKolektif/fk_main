@@ -91,7 +91,7 @@ class SiteContacts(models.Model):
     spotify_podcast = models.URLField(blank=True, null=True, default='https://www.spotify.com')
     apple_podcast = models.URLField(blank=True, null=True, default='https://www.apple.com')
     youtube_podcast = models.URLField(blank=True, null=True, default='https://www.youtube.com')
-
+    paypal =models.URLField(blank=True, null=True)
     @classmethod
     def get_site_contact_details(cls):
         cached_details = cache.get('site_contact_details')
