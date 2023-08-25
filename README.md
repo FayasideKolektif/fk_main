@@ -12,6 +12,12 @@ This project utilizes the following technologies:
 - HTML, CSS, JS
 - Hosting: Render
 - Database: Postgres on Render
+## Domain
+- DNS -- Namecheap.
+## Email
+- official email is mail@defayasidekolektif.org
+- Mail box login is https://privateemail.com
+- 
 
 ## Reminders
 
