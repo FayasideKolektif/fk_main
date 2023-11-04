@@ -28,6 +28,8 @@ class Articles (models.Model):
     date =models.DateTimeField()
     image = CloudinaryField('image',folder='article_images')
     body = RichTextField( blank=True, null=True)
+    files = CloudinaryField('file', resource_type='raw', folder='article_files',null=True,blank=True)
+
 
 
     publish=models.BooleanField(default=False)
@@ -112,10 +114,11 @@ class SiteContacts(models.Model):
 class Exhibition(models.Model):
     #image = models.FileField()
     image = CloudinaryField('image',folder='exhibition_images')
-    material = models.CharField(max_length=500,null=True,blank=True)
-    title = models.CharField(max_length=500)
-    author = models.CharField( max_length=500,default='Fayaside Kolectif')
-    description = RichTextField( blank=True, null=True)
+    files = CloudinaryField('file', resource_type='raw', folder='downloadable_files',null=True,blank=True)
+    material = models.CharField(max_length=500,null=True,blank=True,help_text='Max 500 words')
+    title = models.CharField(max_length=500,help_text='Max 500 words')
+    author = models.CharField( max_length=500,default='Fayaside Kolectif', help_text='Optional Field - Default author is Fayaside Kolectif')
+    description = RichTextField( blank=True, null=True, help_text='An overview of an exhibition')
     slug = models.SlugField(blank=True,null=True,help_text='Optional')
     date = models.DateTimeField(auto_now_add=True)
     def save(self, *args, **kwargs):

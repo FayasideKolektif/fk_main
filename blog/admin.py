@@ -6,7 +6,7 @@ admin.site.register(Like)
 admin.site.register(Category)
 admin.site.register(NewsletterEmail)
 admin.site.register(SiteContacts)
-admin.site.register(Exhibition)
+# admin.site.register(Exhibition)
 
 class ArticleAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -14,7 +14,7 @@ class ArticleAdmin(admin.ModelAdmin):
             'fields': ('user','author','title', 'tagline', 'date', 'tags', 'slug'),
         }),
         ('Content', {
-            'fields': ('image', 'body'),
+            'fields': ('image', 'body','files'),
         }),
         ('Meta Data', {
             'fields': ('meta_description', 'meta_keywords'),

@@ -43,7 +43,7 @@
                     {% csrf_token %}
                    <input type="hidden" name="article_id" value="{{ article.id }}" >   
                  <button type="submit"  style="background:transparent; border:none; font-size:1.3rem;margin-block: 20px; font-weight: thin;"> <img src="{% static 'icons/like.png' %}" alt="like-button" width="40px" style="top: 10px; position:relative; cursor: pointer;"> </button> <span id="applaudcount" style="font-size:1.4rem;">{{article.applaud}}</span>
-                </form>
+            </form>
         <br>
                 
     <!-- AddToAny BEGIN -->
@@ -64,7 +64,28 @@
           background-color: rgba(0, 0, 0, 0.7) !important;
           border-radius: 0 !important;
       }
+      a.downloadfiles{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:1rem;
+      background:white;
+      gap:1rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      margin-bottom: 1rem;
+    }
   </style>
+  {% if article.files %}
+  <a href="{{article.files.url}}" class="downloadfiles" target="_blank" >
+                    <div class="filename">
+                      {{ article.title }} - Full Pdf file
+                    </div>
+                
+                    <span>
+                        <img src="{% static 'icons/pdf.png' %}" width='35px' alt="pdf-icon">
+                    </span>
+    </a>
+    {%endif%}
 <div class="paginationNav" > 
     <div>
         {% if prevpost %} 

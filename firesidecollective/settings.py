@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'events',
     'cloudinary',
-    'accounts'
+    'accounts',
+    'exhibition'
 
 ]
 

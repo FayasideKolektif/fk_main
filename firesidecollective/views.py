@@ -4,7 +4,8 @@ from events.models import Event
 from datetime import date
 from blog.models import NewsletterEmail
 from django.http import  JsonResponse
-
+from exhibition.models import Exhibition as myexhibition
+import cloudinary
 def home(request):
        articles=Articles.objects.all
        today = date.today()
@@ -16,12 +17,6 @@ def home(request):
        return render(request, 'main/home.html',context)
 def about(request):
        return render(request, 'main/about.html')
-def exhibitions(request):
-       exhibitions = Exhibition.objects.all()[:8]
-       context={
-              'exhibitions':exhibitions,
-       }
-       return render(request, 'blog/exhibitions.html',context)
 
 def subscribe(request):
     if request.method == 'POST':

@@ -19,13 +19,22 @@
       {% for event in events%}
       <a href="{% url 'events' %}">
           <div class="event">
-              <div class="date"> {{ event.date|date:"d" }} {{ event.date|date:"M" }}
-                  <br> {{event.date|date:"Y"}}</div>
+              <div class="event-image-div">
+                {% if event.image %}
+                  <img src="{{event.image.url}}" alt="event_image" class="event-image">
+                  {%else%}
+                  <img src="{% static 'images/dummy.png'%}" alt="event_image" class="event-image">
+                {% endif %}
+
+              </div>
               <div class="event_info">
+                <p class="event-date"> {{ event.date|date:"d" }} {{ event.date|date:"M" }} - {{event.date|date:"Y"}}</p>
                   <p class="event_title"> {{event.title}}</p>
+                  
                   <p style="margin-bottom:1rem;font-size:large;color:grey"> 
                     <span style="display: flex;align-items: center;gap: 10px; font-family: inherit;"><img src="{% static 'icons/clock.png' %}" alt="" style="width: 17px;"> {{event.time|title}} </span> 
-                    <span style="display: flex;align-items: center; font-family: inherit;"><img src="{% static 'icons/location.png' %}" alt="" style="width: 30px; margin-left: -6px;"> {{event.venue}} </span> 
+                    <span style="display: flex;align-items: center; font-family: inherit;"><img src="{% static 'icons/location.png' %}" alt="" style="width: 30px; margin-left: -6px;"> {{event.venue}} </span>
+
                   </p>
                   <p class="event_description">{{event.description}}</p>
                   <p style="margin-top: 20px;">  {{event.organizer}}</p>

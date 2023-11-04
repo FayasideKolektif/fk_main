@@ -100,7 +100,7 @@ section.about{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-block: 4rem;
+    margin-block: 1rem 4rem;
     height: 65vh;
     background-color: whitesmoke;
     background-position: center;
@@ -110,7 +110,7 @@ section.about{
 }
 
 .tagline {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     text-align: center;
     background-color: white;
     padding: 2rem;
@@ -137,17 +137,14 @@ section.about{
 .introduction h1{
     font-size: 4rem;
     letter-spacing: 12px;
-    font-family: 'Times New Roman', Times, serif;
 }
 .intro-left{
     font-size: 1.2rem;
     text-transform:uppercase
 }
 .intro-right{
-    width: 250px;
-    font-size: 1.1rem;
-    padding-top: 1.5rem;
-    text-transform:uppercase
+padding-right: 1.5rem;
+
 }
 
 /*Columns Gallery */
@@ -177,6 +174,7 @@ flex-direction: column;
 }
 .column div p{
     padding-block: 2rem;
+    text-align: justify;
 }
 .columns h5{
     font-size: 1.7rem;
@@ -186,6 +184,7 @@ flex-direction: column;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 /* Articles*/
@@ -213,6 +212,7 @@ section.articles h3{
     }
     article{
         min-width: 350px;
+        max-width: 350px;
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
     }
@@ -250,7 +250,6 @@ section.articles h3{
 .podcast-container{
     display: flex;
     justify-content: space-between;
-    font-size: 1.3rem;
     align-items: center;
     background-color: whitesmoke;
     padding: 2rem;
@@ -291,23 +290,31 @@ section.events{
     justify-content: space-between;
     gap: 1rem;
     margin-block: 2rem 
-
 }
-.event .date{
-    min-width: 200px;
-    text-align: center;
+.event .event-image-div{
+    min-width: 300px;
+    background-color: whitesmoke;
+}
+.event .event-image{
+    width: 300px;
+    height: 100%;
+    object-fit: fill;
+}
+
+.event .event-date{
     font-weight: bold;
-    letter-spacing: 3px;
-    font-size: 1.7rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    display: inline-block;
 }
 .event_title{
     font-size: 1.7rem;
-    padding-bottom: 20px;
+    padding-block: 20px;
 }
 #preloader {
 position: fixed;

@@ -12,7 +12,7 @@
             </div>
             {% for exhibition in exhibitions|slice:":8" %}
             <div class="scope_item" style="--i:{{ forloop.counter }};">
-                <a href="#" class="popup-link" data-image="{{ exhibition.image.url }}" data-title="{{exhibition.title|safe}}" data-content="{{exhibition.description}}"  data-artist="{{exhibition.author}}" data-material="{{exhibition.material}}">
+                <a href="#" class="popup-link" data-image="{{ exhibition.image.url }}" data-title="{{exhibition.title|safe}}" data-content="{{exhibition.description}}"  data-artist="{{exhibition.author}}" data-material="{{exhibition.material}}" data-files ="{{ exhibition.files.url }}">
                     <img src="{{ exhibition.image.url }}" alt="not found">
                 </a>
             </div>
@@ -58,35 +58,17 @@
 </div>
 
 
-<script>
 
-    const mouseAlerts = document.querySelectorAll('.mouse_alerts');
-        mouseAlerts.forEach(mouseAlert => {
-          mouseAlert.addEventListener('mouseover', () => {
-            const message = mouseAlert.getAttribute('data-message');
-            circle.style.height = "100px";
-            circle.style.width = "100px";
-            circle.style.backgroundColor = "black"
-            if (message){
-            circle.innerText=message
-            }
-            else{
-                circle.innerText='SCROLL →'
-            }
-          });
-      
-          mouseAlert.addEventListener('mouseout', () => {
-       
-            circle.style.height = "15px";
-            circle.style.width = "15px";
-            circle.style.borderRadius = "50%";
-            circle.innerText='';
-            circle.style.backgroundColor = "#f82c14"
-     
-          });
-        });
-    </script>
 <style>
+    a.downloadfiles{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:1rem;
+  background:white;
+  gap:1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
     body{
         text-align: justify;
     }
@@ -156,7 +138,12 @@
     .details span{
         font-weight: normal;
     }
-    #subscribeToNewsletter{display: none;}
+    .disable-download{
+display: none !important;
+}
+    #subscribeToNewsletter{display: none;
+ 
+    }
     @media screen and (max-width:768px) {
         .popup-flex{
             flex-direction: column;
@@ -186,7 +173,13 @@
         const text = popupLink.getAttribute('data-content');
         const artist = popupLink.getAttribute('data-artist');
         const material = popupLink.getAttribute('data-material');
-        
+        const downloads = popupLink.getAttribute('data-files');
+        var is_active = 'disable-download'
+        if(downloads){
+            is_active = 'active-download'
+        }
+
+        console.log(downloads)
         scopeItem.addEventListener('click', (event) => {
             event.preventDefault();
             
@@ -199,6 +192,15 @@
                 </div>
                 <div class="popup-title">${title}</div>
                 <div class="popup-description">${text}</div>
+                
+                <a href="${downloads}" class="downloadfiles ${is_active}" target="_blank" >
+                    <div class="filename">
+                        ${title}- Full Pdf file
+                    </div>
+                    <span>
+                        <img src="{% static 'icons/pdf.png' %}" width='35px' alt="pdf-icon">
+                    </span>
+                </a>
             `;
 
             popup.classList.add('active');
