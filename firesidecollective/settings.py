@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)@bvg8y^z+-aoaov$_pxzmb3oxiy!6-mh=jrv20the1j@b@02y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1','fsk-oya4.onrender.com','defayasitekolektif.org','www.defayasitekolektif.org','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','fsk-oya4.onrender.com','defayasitekolektif.org','www.defayasitekolektif.org','localhost','https://firesidecollective.onrender.com']
 
 # Application definition
 
