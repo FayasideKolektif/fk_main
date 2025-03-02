@@ -95,7 +95,7 @@ border-radius: 15px;
   }
 }
 
-/* aBOUT seCTION */
+/* About Section */
 section.about{
     display: flex;
     justify-content: center;
@@ -127,7 +127,7 @@ section.about{
   } 
 }
 
-/* INtroduction */
+/* Introduction */
 .introduction{
     display: flex;
     justify-content: space-between;
@@ -410,3 +410,7 @@ width: calc(200px + 5vw); /* adjust size as needed */
     }
 
 }
+
+
+
+
