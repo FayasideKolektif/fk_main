@@ -1,61 +1,36 @@
-# FayaSide Kolektif Project - README
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Welcome to the official documentation for the FayaSide Kolektif Project.
+## Getting Started
 
-Visit our official site at [https://defayasidekolektif.org](https://defayasidekolektif.org).
+First, run the development server:
 
-## Technologies Used
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-This project utilizes the following technologies:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Django (backend)
-- HTML, CSS, JS
-- Hosting: Render
-- Database: Postgres on Render
-## Domain
-- DNS -- Namecheap.
-## Email
-- official email is mail@defayasidekolektif.org
-- Mail box login is https://privateemail.com
-- 
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## Reminders
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- The email address (mail@defayasidekolektif.org) is currently on a free trial until **October 8, 2023**. It can be renewed for an additional 2 months of free trial (all previous emails will be lost), or you can purchase a 1-year minimum subscription on Namecheap for 1.15€ per month.
-- The domain is registered on Namecheap ([https://www.namecheap.com](https://www.namecheap.com)) and is valid until **August 3, 2025**.
+## Learn More
 
-## Warnings !!!
+To learn more about Next.js, take a look at the following resources:
 
-- This repository must remain private due to the presence of sensitive information. If you intend to make it public, ensure that all API keys and secret keys are stored separately as environmental variables.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Sections
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-- [Admin Panel](https://www.defayasitekolektif.org/admin) - Link to the admin panel.
+## Deploy on Vercel
 
-### Exhibition
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- To create new exhibitions, utilize the Django admin panel.
-- The exhibition page is designed to accommodate a maximum of 8 exhibitions at a time.
-- We highly recommend compressing exhibition images to reduce page load time. You can use tools like [Vance AI Image Compressor](https://vanceai.com/image-compressor/) for this purpose.
-
-### Events
-
-- Use the Django admin panel to create, edit, and delete events.
-
-### Podcast
-
-- For Spotify-hosted podcasts, Podcast settings require the Podcast ID, Spotify client ID, and Spotify client secret key.
-- You can create only one Podcast setting at a time.
-
-### Blog
-
-- Create blog articles using the Django admin panel.
-
-### Shop
-
-- shop available on subdomain under https://shop.defayasitekolektif.org
-
-
-### Site Contact Details / Social Details
-
-- To display appropriate links in the footer section of the page, edit the site contact section in the admin panel with the relevant contact details and social links.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

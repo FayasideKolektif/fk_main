@@ -1,0 +1,102 @@
+.storytellingContainer {
+    /* Add your styles here */
+  }
+  
+  .container {
+    /* Add your styles here */
+  }
+  
+  .scope {
+    /* Add your styles here */
+  }
+  
+  .scopeCenter {
+    /* Add your styles here */
+  }
+  
+  .scopeItem {
+    /* Add your styles here */
+  }
+  
+  .detailsContainer {
+    margin-top: 2rem;
+  }
+  
+  .details {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .details span {
+    font-weight: normal;
+  }
+  
+  .popup {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    overflow-y: hidden;
+  }
+  
+  .popupContent {
+    /* Add your styles here */
+  }
+  
+  .popupFlex {
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .popupImage {
+    min-width: 300px;
+    border: 4px solid black;
+    padding: 7px;
+  }
+  
+  .popupDescription p, p {
+    font-size: large;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .popupTitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.1rem;
+    margin-block: 2rem;
+  }
+  
+  .closeBtn {
+    background-color: white;
+    border: none;
+  }
+  
+  .downloadfiles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .popupFlex {
+      flex-direction: column;
+      overflow-y: scroll;
+      min-height: 100vh;
+    }
+  }
+  
